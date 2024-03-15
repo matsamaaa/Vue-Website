@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+$gray1: rgb(33, 37, 41);
+$gray1-opacity-70: rgba(27, 30, 34, 0.7);
+$gray1-opacity-90: rgba(27, 30, 34, 0.9);
+
+body {
+    background-color: $gray1;
+    font-family: "Oswald", sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+header {
+    color: white;
+    background-color: $gray1-opacity-70;
+}
+
+.bg-scss-1 {
+    background-color: $gray1-opacity-90;
+}
+
+.title {
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 45px;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+/* Fog Creation & Animation */
+
+.fog {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 30px;
+    width: min-content;
+
+    &:nth-child(1) {
+        animation: left_to_right 10s alternate infinite ease-in-out;
+    }
+
+    &:nth-child(2) {
+        animation: right_to_left 10s alternate infinite ease-in-out;
+    }
+
+    &:nth-child(3) {
+        animation: left_to_right 10s alternate infinite ease-in-out;
+        animation-delay: 3s;
+    }
+
+    .line {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+
+        &:nth-child(3) {
+            span {
+                background-color: rgb(221, 221, 221);
+            }
+        }
+
+        &:nth-child(2) {
+            z-index: 10;
+
+            span {
+                &:nth-child(2) {
+                    z-index: 1;
+                }
+                &:nth-child(3) {
+                    background-color: rgb(221, 221, 221);
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            z-index: 5;
+
+            span {
+                &:nth-child(2) {
+                    z-index: 1;
+                }
+                &:nth-child(3) {
+                    background-color: rgb(221, 221, 221);
+                }
+                &:nth-child(4) {
+                    animation-delay: 0s;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            z-index: 5;
+
+            span {
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                
+                &:nth-child(1) {
+                    animation-delay: 0.5s;
+                }
+
+                &:nth-child(2) {
+                    background-color: white;
+                    animation-delay: 0s;
+
+                }
+                &:nth-child(3) {
+                    z-index: 3;
+                }
+            }
+        }
+
+        span {
+            width: 40px;
+            background-color: white;
+            height: 40px;
+            border-radius: 100%;
+            transform: scale(1.4);
+            position: relative;
+            
+
+            &:nth-child(odd) { /* Applique l'effet à une fois sur deux */
+                animation: little_to_big 1s alternate infinite;
+            }
+
+            &:nth-child(even) { /* Applique l'effet à une fois sur deux */
+                animation: little_to_big 1s alternate infinite;
+                animation-delay: 0.5s;
+            }
+        }
+    }
+}
+
+.big-fog {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+
+    .line {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+
+        span {
+            width: 45px;
+            background-color: white;
+            height: 45px;
+            border-radius: 100%;
+            transform: scale(1.5);
+            position: relative; 
+        }
+    }
+}
+
+.line-extend {
+    padding: 0 !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+@keyframes little_to_big {
+    from {
+        transform: scale(1.4);
+    }
+    
+    to {
+        transform: scale(1.6);
+    }
+}
+
+@keyframes left_to_right {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(50vw);
+    }
+}
+
+@keyframes right_to_left {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-50vw);
+    }
+}
