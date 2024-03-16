@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div :style="{ top: distanceT, left: distanceL }" class="fog absolute">
+    <div :style="{ top: distanceT, left: distanceL }" class="fog absolute hidden md:flex">
         
         <div class="line">
             <span></span>

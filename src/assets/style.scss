@@ -6,14 +6,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
 $gray1: rgb(33, 37, 41);
+$gray2: rgb(59, 59, 59);
+$gray3: rgb(26, 26, 26);
 $gray1-opacity-70: rgba(27, 30, 34, 0.7);
 $gray1-opacity-90: rgba(27, 30, 34, 0.9);
+
+$blue1: rgb(161, 213, 255);
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    // For Internet Explorer
+    & {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
 
 body {
     background-color: $gray1;
     font-family: "Oswald", sans-serif;
     width: 100vw;
     overflow-x: hidden;
+    @include scrollbars(5px, $gray2, $gray1);
 }
 
 header {
@@ -21,8 +48,16 @@ header {
     background-color: $gray1-opacity-70;
 }
 
+footer {
+    background-color: $gray3;
+}
+
 .bg-scss-1 {
     background-color: $gray1-opacity-90;
+}
+
+nav {
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 .title {
@@ -36,23 +71,9 @@ header {
 /* Fog Creation & Animation */
 
 .fog {
-    display: flex;
     flex-direction: column;
     padding: 15px 30px;
     width: min-content;
-
-    &:nth-child(1) {
-        animation: left_to_right 10s alternate infinite ease-in-out;
-    }
-
-    &:nth-child(2) {
-        animation: right_to_left 10s alternate infinite ease-in-out;
-    }
-
-    &:nth-child(3) {
-        animation: left_to_right 10s alternate infinite ease-in-out;
-        animation-delay: 3s;
-    }
 
     .line {
         display: flex;
@@ -62,7 +83,7 @@ header {
 
         &:nth-child(3) {
             span {
-                background-color: rgb(221, 221, 221);
+                background-color: $blue1;
             }
         }
 
@@ -74,7 +95,7 @@ header {
                     z-index: 1;
                 }
                 &:nth-child(3) {
-                    background-color: rgb(221, 221, 221);
+                    background-color: $blue1;
                 }
             }
         }
@@ -87,7 +108,7 @@ header {
                     z-index: 1;
                 }
                 &:nth-child(3) {
-                    background-color: rgb(221, 221, 221);
+                    background-color: $blue1;
                 }
                 &:nth-child(4) {
                     animation-delay: 0s;
@@ -137,36 +158,6 @@ header {
     }
 }
 
-.big-fog {
-    display: flex;
-    flex-direction: column;
-    width: min-content;
-
-    .line {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        position: relative;
-
-        span {
-            width: 45px;
-            background-color: white;
-            height: 45px;
-            border-radius: 100%;
-            transform: scale(1.5);
-            position: relative; 
-        }
-    }
-}
-
-.line-extend {
-    padding: 0 !important;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
 @keyframes little_to_big {
     from {
         transform: scale(1.4);
@@ -174,25 +165,5 @@ header {
     
     to {
         transform: scale(1.6);
-    }
-}
-
-@keyframes left_to_right {
-    from {
-        transform: translate(0);
-    }
-
-    to {
-        transform: translate(50vw);
-    }
-}
-
-@keyframes right_to_left {
-    from {
-        transform: translate(0);
-    }
-
-    to {
-        transform: translate(-50vw);
     }
 }

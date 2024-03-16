@@ -1,34 +1,26 @@
 <script setup>
 import Fog from './Fog.vue'
-import BigFog from './BigFog.vue'
-
-import { ref, onMounted } from 'vue'
-
-const bigFogWidth = ref(0);
-
-onMounted(() => {
-    const bigFog = document.querySelector(".big-fog");
-    bigFogWidth.value = bigFog.offsetWidth;
-
-    console.log(bigFog.offsetWidth)
-});
 </script>
 
 <template>
-    <div class="w-screen h-[90vh] relative">
-        <Fog color="" distanceT="15vh" distanceL="25vw" />
-        <Fog color="" distanceT="30vh" distanceL="70vw" />
-        <Fog color="" distanceT="60vh" distanceL="10vw" />
+    <div class="w-screen h-[90vh] relative z-10">
+        <Fog color="" distanceT="12vh" distanceL="15vw" />
+        <Fog color="" distanceT="32vh" distanceL="70vw" />
+        <Fog color="" distanceT="50vh" distanceL="25vw" />
 
-        
-
-        <template v-if="bigFogWidth > 0">
-            <p>test</p>
-            <BigFog v-for="index in Math.ceil(screenWidth / bigFogWidth)"
-                :key="index"
-                color=""
-                distanceT="80vh"
-                distanceL="(index * bigFogWidth) + 'px'" />
-        </template>
+        <div class="absolute flex flex-col justify-center text-center items-center w-full gap-8 h-[75vh] z-5">
+            <div class="flex flex-row justify-center items-center gap-4 flex-wrap">
+                <img src="../assets/logo-ogc.svg" alt="" class="w-[30vh]">
+                <h2 class="text-white font text-7xl">Oragon Cloud</h2>
+            </div>
+            <p class="text-5xl pl-0 md:pl-[2rem]">Projet d'auto-hébergement privé</p>
+            <br>
+            <br>
+            <img class="w-[5.5rem] h-[5.5rem]" src="../assets/scroll.gif">
+        </div>
     </div>
 </template>
+
+<script>
+
+</script>
