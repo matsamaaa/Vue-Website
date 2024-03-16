@@ -6,7 +6,7 @@ import Footer from './components/Footer.vue'
 
 <template>
   <div id="wrapper">
-    <header class="pt-[10vh] h-dvh relative">
+    <header class="pt-[10vh] h-svh relative">
       <NavBar />
       <Cloud />
     </header>
@@ -14,7 +14,7 @@ import Footer from './components/Footer.vue'
     <main class="relative">
 
       <!-- Qui Sommes Nous ? -->
-      <div id="who" class="bg-[url('./assets/bg-1.png')] bg-cover h-dvh relative z-0">
+      <div id="who" class="bg-[url('./assets/bg-1.png')] bg-cover h-lvh relative z-0">
         <img src="./assets/fog.svg" alt="" class="absolute w-full z-10 transform animate-scale-fog-2 md:animate-scale-fog-1 select-none">
         <div class="bg-opacity-0 min-h-max h-[15vh] w-full flex justify-center items-end"></div>
         <div class="h-[70vh] sticky bottom-0 shadow-2xl">
@@ -23,7 +23,7 @@ import Footer from './components/Footer.vue'
           </div>
           <div class="bg-scss-1 h-[60vh] flex flex-col justify-evenly items-center">
             <hr class="w-1/3 h-1 bg-sky-600 border-none rounded-lg">
-            <p class="w-2/3 text-justify text-sm md:text-xs text-white">OGC est une initiative unique d'auto-hébergement, née de la passion commune d'un groupe d'enthousiastes du cloud computing. Notre mission est de créer une plateforme d'hébergement versatile, propulsée par l'expertise collective de nos membres, chacun apportant ses compétences spécifiques pour enrichir notre projet. Notre objectif est de fournir un service le plus indépendant possible des tiers, en mettant l'accent sur la liberté et l'autonomie technologique. Cette approche nous permet non seulement de réduire considérablement les coûts d'hébergement pour nos membres, leur offrant ainsi la possibilité de déployer leurs propres projets à des coûts minimes, mais aussi de bénéficier d'une infrastructure de qualité industrielle. Chez OGC, nous croyons fermement en l'importance de l'auto-suffisance dans le domaine du cloud computing, et nous nous engageons à développer un écosystème qui reflète cette philosophie.</p>
+            <p class="w-3/4 text-justify text-xs md:text-xl text-white">OGC est une initiative unique d'auto-hébergement, née de la passion commune d'un groupe d'enthousiastes du cloud computing. Notre mission est de créer une plateforme d'hébergement versatile, propulsée par l'expertise collective de nos membres, chacun apportant ses compétences spécifiques pour enrichir notre projet. Notre objectif est de fournir un service le plus indépendant possible des tiers, en mettant l'accent sur la liberté et l'autonomie technologique. Cette approche nous permet non seulement de réduire considérablement les coûts d'hébergement pour nos membres, leur offrant ainsi la possibilité de déployer leurs propres projets à des coûts minimes, mais aussi de bénéficier d'une infrastructure de qualité industrielle. Chez OGC, nous croyons fermement en l'importance de l'auto-suffisance dans le domaine du cloud computing, et nous nous engageons à développer un écosystème qui reflète cette philosophie.</p>
             <hr class="w-1/3 h-1 bg-sky-600 border-none rounded-lg">
           </div>
         </div>
