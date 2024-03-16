@@ -24,7 +24,7 @@
                     <h4 class="text-3xl text-white">Crédits</h4>
                     <br>
                     <a href="https://github.com/matsamaaa" class="text-xl text-[#b6b6b6]">- Mat_sama [Developpeur]</a>
-                    <a href="https://github.com/matsamaaa" class="text-xl text-[#b6b6b6]">- Neptuno [Graphiste]</a>
+                    <a href="https://www.instagram.com/dakcadak.uno/" class="text-xl text-[#b6b6b6]">- Neptuno [Graphiste]</a>
                 </div>
             </div>
         </div>

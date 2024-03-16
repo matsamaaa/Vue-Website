@@ -43,6 +43,11 @@ body {
     @include scrollbars(5px, $gray2, $gray1);
 }
 
+#wrapper {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 header {
     color: white;
     background-color: $gray1-opacity-70;
