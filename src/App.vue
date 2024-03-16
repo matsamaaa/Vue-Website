@@ -2,10 +2,18 @@
 import NavBar from './components/NavBar.vue'
 import Cloud from './components/Cloud.vue'
 import Footer from './components/Footer.vue'
+
+import { ref, onMounted } from 'vue'
+
+const isMobileDevice = ref(false)
+
+onMounted(() => {
+  isMobileDevice.value = isMobile()
+})
 </script>
 
 <template>
-  <div id="wrapper">
+  <div :id="isMobileDevice ? 'wrapper' : ''">
     <header class="pt-[10vh] h-svh relative">
       <NavBar />
       <Cloud />
